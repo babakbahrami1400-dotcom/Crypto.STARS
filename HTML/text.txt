@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سایت ترید کریپتو استارز - Crypto.Stars</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://s3.tradingview.com/tv.js"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-900 text-white">
+
+  <!-- Header -->
+  <header class="bg-black/80 backdrop-blur-md sticky top-0 z-50 p-4">
+    <nav class="container mx-auto flex justify-between items-center">
+      <h1 class="neon-text text-2xl font-bold">Crypto.Stars</h1>
+      <ul class="flex space-x-4 space-x-reverse">
+        <li><a href="#dashboard" class="btn-neon text-sm">داشبورد</a></li>
+        <li><a href="#chart" class="btn-neon text-sm">چارت</a></li>
+        <li><a href="#tokens" class="btn-neon text-sm">توکن‌ها</a></li>
+        <li><a href="#social" class="btn-neon text-sm">اجتماعی</a></li>
+        <li><a href="#news" class="btn-neon text-sm">اخبار</a></li>
+      </ul>
+      <div class="flex space-x-2 space-x-reverse">
+        <button id="postBtn" class="btn-neon">پست بگذار</button>
+        <button id="storyBtn" class="btn-neon">استوری</button>
+        <button id="alarmBtn" class="btn-neon">الارم</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="flex-1 container mx-auto p-4">
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-gray-800/50 rounded-lg p-4 neon-border">
+        <h3 class="neon-text text-lg">حجم ۲۴ساعته</h3>
+        <p id="volume">۲.۵B $</p>
+      </div>
+      <div class="bg-gray-800/50 rounded-lg p-4 neon-border">
+        <h3 class="neon-text text-lg">میم‌کوین برتر</h3>
+        <ul id="memes" class="text-sm">
+          <li>DOGE: +۵%</li>
+          <li>PEPE: +۱۰%</li>
+        </ul>
+      </div>
+      <div class="bg-gray-800/50 rounded-lg p-4 neon-border">
+        <h3 class="neon-text text-lg">فیوچرز BTC</h3>
+        <p id="futures">۶۵,۰۰۰ $</p>
+      </div>
+      <div class="bg-gray-800/50 rounded-lg p-4 neon-border">
+        <h3 class="neon-text text-lg">تحلیل امروز</h3>
+        <button id="backtestBtn" class="btn-neon text-xs">بک‌تست</button>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section id="chart" class="mb-8 hidden">
+      <h2 class="neon-text text-3xl mb-4">چارت پیشرفته</h2>
+      <div class="bg-black rounded-lg p-4">
+        <div id="tradingview_chart"></div>
+        <div class="flex justify-between mt-4">
+          <select id="timeframe" class="btn-neon p-2">
+            <option value="1">۱دقیقه</option>
+            <option value="60">۱ساعت</option>
+            <option value="D">۱روز</option>
+          </select>
+          <button id="backtestBtn2" class="btn-neon">بک‌تست بگیر</button>
+          <button id="indicatorsBtn" class="btn-neon">اندیکاتورها</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tokens -->
+    <section id="tokens" class="mb-8 hidden">
+      <h2 class="neon-text text-3xl mb-4">لیست توکن‌ها</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full bg-gray-800/50 rounded-lg overflow-hidden">
+          <thead>
+            <tr class="neon-text">
+              <th>نام</th>
+              <th>قیمت</th>
+              <th>حجم</th>
+              <th>تغییر</th>
+            </tr>
+          </thead>
+          <tbody id="tokensTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Social -->
+    <section id="social" class="mb-8 hidden">
+      <h2 class="neon-text text-3xl mb-4">اجتماعی</h2>
+      <div class="bg-gray-800/50 rounded-lg p-4">
+        <form id="postForm">
+          <textarea placeholder="تحلیلت رو بنویس..." class="w-full p-2 bg-transparent border border-neon text-white rounded"></textarea>
+          <button type="submit" class="btn-neon mt-2">پست بگذار</button>
+        </form>
+        <div id="posts" class="mt-4"></div>
+        <div id="stories" class="flex space-x-4 overflow-x-auto mt-4"></div>
+      </div>
+    </section>
+
+    <!-- News -->
+    <section id="news" class="mb-8 hidden">
+      <h2 class="neon-text text-3xl mb-4">اخبار و الارم</h2>
+      <div class="bg-gray-800/50 rounded-lg p-4">
+        <ul id="newsList">
+          <li>بیت‌کوین به ۷۰k رسید!</li>
+        </ul>
+        <button id="alertSet" class="btn-neon mt-4">الارم قیمت BTC</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-black p-4 text-center">
+    <p>&copy; ۲۰۲۵ Crypto.Stars</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

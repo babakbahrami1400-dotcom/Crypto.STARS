@@ -1,0 +1,36 @@
+.neon-text {
+  color: #fff;
+  text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+}
+
+.neon-border {
+  border: 2px solid #00f;
+  box-shadow: 0 0 5px #00f;
+}
+
+.btn-neon {
+  background: #00f;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 5px;
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 15px #00f;
+}
+
+.alarm-active {
+  background: #00ff00;
+  box-shadow: 0 0 10px #00ff00;
+}
+
+.primary-neon {
+  background: linear-gradient(to right, #00f, #f0f);
+}
+
+.secondary-neon {
+  background: linear-gradient(to right, #0ff, #f0f);
+}
